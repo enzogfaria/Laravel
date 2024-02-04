@@ -3,12 +3,24 @@
 @section('title', 'Aula Laravel')
 
 @section('content')
-<h1>Olá, Mundo!</h1>
-@if($nome == "Enzo")
-<p>Olá, {{ $nome }}!</p>
-@else
-<p>Não reconhecido</p>
-@endif
 
-<a href="/teste">Teste</a>
+<div id="search-cointainer" class="col-md-12">
+    <h1>Busque um evento</h1>
+    <form action="">
+        <input type="text" id="search" name="search" class="form-control" placeholder="Procurar...">
+    </form>
+</div>
+<div id="events-cointainer" class="col-md-12">
+    <h2>Próximos Eventos</h2>
+    <p>Veja os eventos dos próximos dias</p>
+    <div id="cards-container" class="row">
+        @foreach($events as $event)
+        <div class="card col-md-3">
+            <p class="card-date">03/02/2024</p>
+            <h5 class="card-title">{{ $event->title }}}</h5>
+            <p class="card-participants">X participantes</p>
+            <a href="" class="btn btn-primary">Saber mais</a>
+        </div>
+    </div>
+</div>
 @endsection
