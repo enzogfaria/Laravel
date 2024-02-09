@@ -6,4 +6,6 @@ Route::get('/', [EventController::class, 'index']);
 Route::get('/events/create', [EventController::class, 'create']);
 Route::get('/events', [EventController::class, 'store']);
 
-Route::get
+Route::get('/contact', function() {
+    return view('contact');
+});
